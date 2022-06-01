@@ -14,18 +14,23 @@ export const Header = styled.View`
     width: 100%;
     height: ${RFPercentage(42)}px;
 
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction: row; */
+    padding-top: 60px;
 
     background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const UserWrapper = styled.View`   
-    width: 100%;
-
+    width: 100%;    
     padding: 0 24px;
 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: orange; */
+    
 `;
 
 export const UserInfo = styled.View`
