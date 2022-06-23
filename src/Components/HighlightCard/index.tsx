@@ -11,20 +11,28 @@ import {
     LastTransation,
 } from './styles';
 
-const HighlightCard: React.FC = () => {
+interface Props {
+  title: string;
+  amount: string;
+  lastTransaction: string;
+}
+
+export function HighlightCard({
+  title,
+  amount,
+  lastTransaction
+} : Props){
   return (
     <Container >
         <Header>
-            <Title>Entradas</Title>
+            <Title>{title}</Title>
             <Icon name="arrow-up-circle" />
         </Header>
 
         <Footer>
-            <Amount>R$ 17.400,00</Amount>
-            <LastTransation>Última entrada dia 13 de abril</LastTransation>
+            <Amount>{amount}</Amount>
+            <LastTransation>{lastTransaction}</LastTransation>
         </Footer>
     </Container>
   );
 }
-
-export default HighlightCard;

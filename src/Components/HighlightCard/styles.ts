@@ -3,21 +3,15 @@ import { Feather } from '@expo/vector-icons';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
-    background-color: white; //${({theme}) => theme.colors.shape};
+    background-color: ${({theme}) => theme.colors.shape};
 
     width: ${RFValue(300)}px;
     border-radius: 5px;
 
     padding: 19px 23px;    
     padding-bottom: ${RFValue(42)}px;
-    margin-right: 16px;
-
-    height: 300px;
-    /* position: absolute;
-    top: 160px;
-
-    margin-left: 22px; */
-    
+    margin-right: 16px;    
+    margin-top: ${RFValue(20)}px;
 `;
 
 export const Header = styled.View`
@@ -37,17 +31,15 @@ export const Icon = styled(Feather)`
     color: #12A454;
 `; 
 
-export const Footer = styled.View`
-    /* background-color:; blue; */
-    margin-top: 12px;
-`; 
+export const Footer = styled.View``; 
 
 export const Amount = styled.Text`
     font-size: ${RFValue(32)}px;
     font-family:  ${({ theme }) => theme.fonts.medium};
-    padding: 0;
+
+   
     margin-top: 38px;
-    height: 44px;
+    
     color: ${({ theme }) => theme.colors.text_dark};
 `; 
 

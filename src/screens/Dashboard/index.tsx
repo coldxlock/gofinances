@@ -1,5 +1,5 @@
 import React from 'react';
-import HighlightCard from '../../components/HighlightCard';
+import { HighlightCard } from '../../components/HighlightCard';
 
 import { 
   Container, 
@@ -33,9 +33,21 @@ export function Dashboard(){
       </Header> 
 
       <HighlightCards>
-        <HighlightCard />
-        <HighlightCard />
-        <HighlightCard />
+        <HighlightCard 
+          title="Entradas" 
+          amount='R$ 17.400,00' 
+          lastTransaction='Última entrada dia 13 de abril'
+        />
+        <HighlightCard 
+          title="Entradas" 
+          amount='R$ 17.400,00' 
+          lastTransaction='Última entrada dia 13 de abril'
+        />
+        <HighlightCard 
+          title="Entradas" 
+          amount='R$ 17.400,00' 
+          lastTransaction='Última entrada dia 13 de abril'
+        />
       </HighlightCards>
     </Container>
     )
