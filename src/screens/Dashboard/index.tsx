@@ -12,6 +12,8 @@ import {
   UserWrapper,
   Icon,
   HighlightCards,
+  Transactions,
+  Title
 } from './styles';
 
 export function Dashboard(){
@@ -41,17 +43,23 @@ export function Dashboard(){
         />
         <HighlightCard 
           type='down'
-          title="Entradas" 
-          amount='R$ 17.400,00' 
+          title="Saídas" 
+          amount='R$ 10.100,00' 
           lastTransaction='Última entrada dia 13 de abril'
         />
         <HighlightCard 
           type='total'
-          title="Entradas" 
-          amount='R$ 17.400,00' 
+          title="Total" 
+          amount='R$ 27.500,00' 
           lastTransaction='Última entrada dia 13 de abril'
         />
       </HighlightCards>
+
+      <Transactions>
+        <Title>Listagem</Title>
+      </Transactions>
+
+
     </Container>
     )
 }
