@@ -1,7 +1,6 @@
 import React from 'react';
 import { HighlightCard } from '../../components/HighlightCard';
-import { TransactionCard } from '../../components/TransactionCard';
-import { getBottomSpace } from 'react-native-iphone-x-helper';
+import { TransactionCard, TrasanctionCardProps } from '../../components/TransactionCard';
 
 import { 
   Container, 
@@ -19,10 +18,16 @@ import {
   TransactionsList
 } from './styles';
 
-export function Dashboard(){
-  const data = [
+export interface DataListProps extends TrasanctionCardProps {
+  id: string;
+}
+
+export function Dashboard(){  
+  const data: DataListProps[] = [
     {
-      title: "Desenvolvimento de site",
+      id: '1',
+      type: 'positive',
+      title: "Salário",
       amount: "R$ 12.000,00",
       category: {
         name: 'Vendas',
@@ -31,25 +36,31 @@ export function Dashboard(){
       date: "13/04/2020"
     },
     {
-      title: "Desenvolvimento de site",
+      id: '2',
+      type: 'negative',
+      title: "Hamburguer de Pizza",
       amount: "R$ 12.000,00",
       category: {
-        name: 'Vendas',
-        icon: 'dollar-sign'
+        name: 'Alimentação',
+        icon: 'coffee'
       },
       date: "13/04/2020"
     },
     {
-      title: "Desenvolvimento de site",
+      id: '3',
+      type: 'negative',
+      title: "Aluguel",
       amount: "R$ 12.000,00",
       category: {
         name: 'Vendas',
-        icon: 'dollar-sign'
+        icon: 'shopping-bag'
       },
       date: "13/04/2020"
     },
     {
-      title: "Desenvolvimento de site",
+      id: '4',
+      type: 'positive',
+      title: "Formatação de computador",
       amount: "R$ 12.000,00",
       category: {
         name: 'Vendas',
@@ -57,15 +68,7 @@ export function Dashboard(){
       },
       date: "13/04/2020"
     },
-    {
-      title: "Desenvolvimento de site",
-      amount: "R$ 12.000,00",
-      category: {
-        name: 'Vendas',
-        icon: 'dollar-sign'
-      },
-      date: "13/04/2020"
-    },
+   
   ];
 
   return (
@@ -111,11 +114,9 @@ export function Dashboard(){
         
         <TransactionsList
           data={data}
+          keyExtractor={item => item.id}
           renderItem={({ item }) => <TransactionCard data={item} />}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingBottom : getBottomSpace()
-          }}
+          
         />
         
       </Transactions>
