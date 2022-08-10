@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Modal } from "./Modal";
 
 import { Input } from '../../components/Form/Input';
 import { Button } from '../../components/Form/Button';

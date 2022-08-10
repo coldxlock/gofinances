@@ -16,7 +16,7 @@ import {
 } from '@expo-google-fonts/inter';
 
 import theme from './src/global/styles/theme';
-import { CategorySelect } from './src/screens/CategorySelect'
+import { Register } from './src/screens/Register'
 
 
 export default function App() {
@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CategorySelect />  
+      <Register />  
     </ThemeProvider>
     
   )
