@@ -54,5 +54,5 @@ buck-out/
 web-build/
 dist/
 
-cmd_uteis.txt
+# cmd_uteis.txt
 metas-objetivos.txt

@@ -1,0 +1,58 @@
+### Instalação do expo
+npm install --global expo-cli
+
+### criando projeto com expo
+expo init meu meuappcomexpo
+
+# Adicionando Typescript 
+Criar tsconfig.json na raiz do projeto
+
+# Iniciar projeto (Typescript)
+expo start
+
+# Instalando Styled-Components
+yarn add styles-components 
+
+# Instalando a Tipagem do Styled-Components
+yarn add @types/styled-components-react-native -D
+
+## instalando fonts
+expo install expo-font @expo-google-fonts/poppins
+expo install expo-font @expo-google-fonts/inter
+
+## loadings
+expo install expo-app-loading
+
+## Instalando o RFValue e RFPercentual
+yarn add react-native-responsive-fontsize
+
+## para iphone
+yarn add react-native-iphone-x-helper
+
+## para flatlist
+yarn add react-native-gesture-handler
+expo install react-native-gesture-handler
+
+
+## testes unitarios
+caso o jest não esteja instalado (não existir a pasta "jest" em node_modules) 
+usar comando abaixo
+// yarn add --dev jest
+
+
+
+
+## testes unitarios
+yarn add --dev @testing-library/react-native
+yarn add --dev @testing-library/jest-native
+yarn add jest-expo --dev
+yarn add @types/jest -D
+
+## testando hooks
+yarn add @testing-library/react-hooks -D
+
+## Hook forms
+yarn add react-hook-form
+
+## Regras de formulário
+yarn add @hookform/resolvers yup
