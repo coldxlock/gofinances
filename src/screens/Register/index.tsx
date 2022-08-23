@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "react-native";
+import { useForm } from "react-hook-form";
 
-import { Input } from '../../components/Form/Input';
+import { InputForm } from "../../components/Form/InputForm";
 import { Button } from '../../components/Form/Button';
 import { TransactionTypeButton } from '../../components/Form/TransactionTypeButton';
 import { CategorySelectButton } from '../../components/Form/CategorySelectButton';
@@ -17,6 +18,11 @@ import {
     TransationsTypes
  } from './styles'
 
+interface FormData {
+    name: string;
+    amount: string;
+}
+
 export function Register() {    
     const [transactionType, setTransactionsType] = useState('');
     const [categoryModalOpen, setCategoryModalOpen] = useState(false);
@@ -26,6 +32,11 @@ export function Register() {
         name: 'Categoria'
 
     });
+
+    const {
+        control,
+        handleSubmit        
+    } = useForm()
 
     function handleTransactionTypeSelect(type: 'up' | 'down') {
         setTransactionsType(type)
@@ -39,6 +50,17 @@ export function Register() {
         setCategoryModalOpen(true)
     }
 
+    function handleRegister(form: FormData) {
+        const data = {
+            name : form.name,
+            amount: form.amount,
+            transactionType,
+            category: category.key
+        }
+
+        console.log(data)
+    }
+
     return (
         <Container>
             <Headers>
@@ -47,8 +69,19 @@ export function Register() {
 
             <Form>
                 <Fields>
-                    <Input placeholder="Nome" />
-                    <Input placeholder="Preço" />
+                    <InputForm 
+                        name="name"
+                        control={control}
+                        placeholder="Nome" 
+                        autoCapitalize="sentences"     
+                        autoCorrect={false}                   
+                    />
+                    <InputForm 
+                        name="amount"
+                        control={control}
+                        placeholder="Preço" 
+                        keyboardType="numeric"
+                    />
                     <TransationsTypes>
                         <TransactionTypeButton 
                             type="up"
@@ -71,7 +104,8 @@ export function Register() {
 
                 
                 <Button 
-                    title="Enviar"                
+                    title="Enviar"     
+                    onPress={handleSubmit(handleRegister)}           
                 />
             </Form>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { TextInputProps } from 'react-native';
 import { Input } from '../Input';
 import { Container } from './styles';
 import { Control , Controller } from 'react-hook-form'
@@ -19,14 +19,15 @@ export function InputForm({
     <Container>
       <Controller
         control={control}
-        render={({ field }) => ()}
-      >
-
-      
-        <Input 
+        render={({ field: { onChange, value } }) => (
+          <Input 
+            onChangeText={ onChange }
+            value={value}
             {...rest}
-        />
-      </Controller>
+          />
+        )}
+        name={name}
+      />
     </Container>
   )
 }
