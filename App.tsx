@@ -16,7 +16,9 @@ import {
 } from '@expo-google-fonts/inter';
 
 import theme from './src/global/styles/theme';
-import { Register } from './src/screens/Register'
+
+import { NavigationContainer } from '@react-navigation/native';
+import { AppRoutes } from './src/routes/app.routes';
 
 
 export default function App() {
@@ -33,7 +35,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Register />  
+      <NavigationContainer>
+        <AppRoutes />  
+      </NavigationContainer>
     </ThemeProvider>
     
   )

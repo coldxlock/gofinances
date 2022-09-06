@@ -56,3 +56,12 @@ yarn add react-hook-form
 
 ## Regras de formulÃ¡rio
 yarn add @hookform/resolvers yup
+
+
+## Navegações (botões de nav que fica em baixo no app)
+
+npm install @react-navigation/native
+
+expo install react-native-screens react-native-safe-area-context
+
+yarn add @react-navigation/bottom-tabs
